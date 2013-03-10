@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conf:component xmlns:conf="http://pulse.torweg.org/container">
+	<!-- all JPA entities provided by this component -->
+	<jpa-entities/>
+	<!-- all packages of this components which are enabled for JAXB, 
+		i.e. they contain a "jaxb.index" -->
+	<jaxb-endorsed/>
+</conf:component>

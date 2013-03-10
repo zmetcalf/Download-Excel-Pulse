@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle>
+	<!-- controllers exposed by this Bundle -->
+	<controllers>
+		<controller class="org.torweg.pulse.component.example.UserListController"/>
+	</controllers>
+
+	<!-- the implementations of org.torweg.pulse.site.content.Content exposed by this Bundle -->
+	<content-mappings/>
+
+	<!-- the Joblets of this Bundle -->
+	<joblets/>
+</bundle>
