@@ -18,7 +18,6 @@ import org.torweg.pulse.service.PulseException;
 import org.torweg.pulse.service.event.DownloadEvent;
 import org.torweg.pulse.service.event.Event;
 import org.torweg.pulse.service.event.EventManager;
-//import org.torweg.pulse.service.event.Event.Disposition; //Added line
 import org.torweg.pulse.service.request.CacheMode;
 import org.torweg.pulse.service.request.ServiceRequest;
 import org.torweg.pulse.util.MimeMap;
@@ -65,13 +64,13 @@ public class UserListController extends Controller {
 			
 			//wrap buffer into a SerializableDataSource
 			String filename = "users.xlsx";
-			SerializableDataSource dataSource = SerializableDataSource.fromByteArray(buffer.getByteArray());
+			SerializableDataSource dataSource = 
+							SerializableDataSource.fromByteArray(buffer.getByteArray());
 			dataSource.setName(filename).setContentType(MimeMap.getMimeType(filename));
-			//dataSource;
 
 			//create a DownloadEvent
 			DownloadEvent downloadEvent = new DownloadEvent(dataSource,
-							Event.Disposition.ATTACHMENT, CacheMode.NONE); //changed to Attachment
+							Event.Disposition.ATTACHMENT, CacheMode.NONE);
 
 			//add event to EventManager
 			EventManager eventManager = request.getEventManager();
