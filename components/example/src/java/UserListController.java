@@ -62,12 +62,12 @@ public class UserListController extends Controller {
 			//write workbook to buffer
 			FastByteArrayOutputStream buffer = new FastByteArrayOutputStream();
 			workbook.write(buffer);
-
+			
 			//wrap buffer into a SerializableDataSource
 			String filename = "users.xlsx";
-			SerializableDataSource dataSource = new SerializableDataSource(
-						buffer.getByteArray(), filename, MimeMap.getInstance()
-										.getMimeType(filename));
+			SerializableDataSource dataSource = SerializableDataSource.fromByteArray(buffer.getByteArray());
+			dataSource.setName(filename).setContentType(MimeMap.getMimeType(filename));
+			//dataSource;
 
 			//create a DownloadEvent
 			DownloadEvent downloadEvent = new DownloadEvent(dataSource,
